@@ -35,7 +35,7 @@ void check(char *c1 ,char *c2 , int len1 ,int len2)
         {
             
             int t = c1[i];
-            if(a2[t]>a1[t])
+            if(a2[t]>=a1[t])
             {
                 pp = 1 ; 
             }
