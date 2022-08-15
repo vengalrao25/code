@@ -1,0 +1,111 @@
+#include <stdio.h>
+#include <string.h>
+#define MAX_LIMIT 200
+
+void check(char *c1 ,char *c2 , int len1 ,int len2)
+{
+    
+    if (len1>=len2)
+    {
+        printf("%s" , c2);
+    }
+    else
+    {
+        int a1[MAX_LIMIT], a2[MAX_LIMIT] ; 
+        for (int i = 0 ; i<200 ; i++)
+        {
+            a2[i] = 0 ;
+            a1[i]=0;
+            
+        }
+        for (int i =0 ;i<len1 ; i++)
+        {
+            int t = c1[i];
+            a1[t]++;
+        }
+        
+        
+        for (int i =0 ;i<len2 ; i++)
+        {
+            int t = c2[i];
+            a2[t]++;
+        }
+        int pp = 100 ; 
+        for(int i = 0 ;i<len1 ;i++)
+        {
+            
+            int t = c1[i];
+            if(a2[t]>a1[t])
+            {
+                pp = 1 ; 
+            }
+            else
+            {
+                pp= 0;
+                break ; 
+            }
+            
+            
+            
+        }
+        
+   
+    
+    if(pp==1 )
+    {
+        int min_num =MAX_LIMIT;
+        for (int i = 0;i<len1 ;i++)
+        {
+            int  t = c1[i];
+            if(min_num>a2[t])
+            {
+                min_num = a2[t];
+            }
+            
+        }
+        
+        for (int i = 0 ;i<len1 ;i++)
+        {
+            int t = c1[i];
+            a2[t]=a2[t]-min_num ; 
+        }
+        
+        for (int i = 0 ;i<len2  ;i++)
+        {
+            int t = c2[i];
+            if(a2[t]>0)
+            {
+                printf("%c",t, a2[t]);
+                a2[t]--;
+            }
+        }
+        
+    }
+    else
+    {
+        for (int i = 0 ;i<len2  ;i++)
+        {
+            int t = c2[i];
+            if(a2[t]>0)
+            {
+                printf("%c",t, a2[t]);
+                a2[t]--;
+            }
+        }
+    }
+    }
+    
+}
+
+
+
+
+int main()
+{
+    char base_ele[MAX_LIMIT] ="BALLOON";
+    char new_ele[MAX_LIMIT] = "QAWABAWONL";
+    int len1 = strlen(base_ele);
+    int len2 = strlen(new_ele);
+   check(base_ele  ,new_ele ,  len1 ,len2) ;
+   return  0 ; 
+}
