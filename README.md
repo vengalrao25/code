@@ -1,1 +1,1 @@
-#basic code
+# ALL BASIC CODES
