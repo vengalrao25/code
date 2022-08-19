@@ -1,0 +1,18 @@
+t ='ABDCBA'
+t = list(t)
+print(t)
+x = len(t) 
+y = len(t)
+for i in range(y):
+    for j in range(x-1):
+        a = ord(t[j])
+        b = ord(t[j+1])
+        if a > b:
+            
+            temp = t[j]
+            t[j] = t[j+1]
+            t[j+1] = temp  
+      
+        
+print(t)      
+
