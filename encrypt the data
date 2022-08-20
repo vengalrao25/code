@@ -1,0 +1,35 @@
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+int main()
+{
+    char t[100] = "Aengalrao ";
+   // printf("%s\n",t);
+int s ;
+printf("Enter the value of encrypt ");
+scanf("%d", &s);
+    int len =strlen(t);
+   //printf("%d", len);
+  
+    for(int i = 0 ; i < len ; i++)
+    {
+        int l = t[i];
+        
+        if (l>=65 && l<=90)
+        {
+            int y =  ((l+s-65)%26 +65) ;
+           
+            printf("%c ",y);
+        }
+        else if (l>=97 && l<=122)
+        {
+            int y =  ((l+s-97)%26 +97) ;
+           
+            printf("%c ",y);
+        }
+    }
+
+    return 0;
+}
